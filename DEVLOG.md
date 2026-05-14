@@ -34,7 +34,13 @@ Worked on Part 3. For initialization, you start at S which gives a distance of 0
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4– May 14: Part 4
+
+Worked on why greedy cannot work for this problem. While coming up with a counter example, I was going to use the one in ASSIGNMENT.md but when I tried applying greedy to it by taking the cheapest path each time, I ended up with an optimal solution. So I took out node D and from there greedy ended up failing, which is what I wanted. Greedy chose the local optimal path which resulted in its failure because the distance from B to C was 100 and the distance from C to B was only 1. If it took the path S to C first, then it wouldn't have had to take the path that cost 100. 
+
+---
+
+## Entry 5 – [Date]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.

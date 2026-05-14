@@ -105,17 +105,17 @@ If a dist in dist_table was wrong, the search would pick a wrong relic and leads
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy chooses the local optimum which is the cheapest path at the current step. This fails because you are stuck with this path and future paths may lead to a less optimal path. 
+- **Counter-example setup:** Nodes: S, B, C, T  dist[S,B] = 1, dist[S, C] = 2, dist[B, C] = 100, dist[C, B] = 1, dist[B, T] = 1, dist[C, T] = 1
+- **What greedy picks:** S -> B -> C -> T. Greedy starts at S and then picks B because the distance is smaller compared to S to C. Total Cost = 1. Then picks C. Total Cost = 101. Lastly picks T as the exit. Total Cost = 102
+- **What optimal picks:** S -> C -> B -> T. Optimal starts at S and then picks C. Total Cost = 2. Then picks B. Total Cost = 1. Lastly picks T as the exit. TOtal Cost = 4
+- **Why greedy loses:** Greedy chooses what looks best at its current node and does not account for future node costs. Starting from S, node B is closer so it chooses that one. But then to get to C, it costs 100 which is way more costly going to C from S and then B. 
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The algorithm must explore every order of relics to account for different costs of different orders. 
 
 ---
 

@@ -28,9 +28,9 @@ A wrong assumption I had was that I could just use dijkstra to cheapest path, bu
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – May 14: Part 3
 
-_Your entry here._
+Worked on Part 3. For initialization, you start at S which gives a distance of 0. There is no where else to go. For maintanence, the priority queue/min heap pops the smallest distance from the unfinalized node. Due to the nonnegative weights, this is correct. At termination, when the heap is empty, finalized nodes have their shortest distance. 
 
 ---
 

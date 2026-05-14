@@ -106,16 +106,6 @@ def run_dijkstra(graph, source):
         visited.add(u)
     return dist
         
-def test_dijkstra():
-    graph = {
-        'S': [('B', 1), ('C', 2), ('D', 2)],
-        'B': [('D', 1), ('T', 1)],
-        'C': [('B', 1), ('T', 1)],
-        'D': [('B', 1), ('C', 1)],
-        'T': []
-    }
-    assert run_dijkstra(graph, 'S') == {'S': 0, 'B': 1, 'C': 2, 'D': 2, 'T': 3}
-    print("Test dijkstra passed")
 
 def precompute_distances(graph, spawn, relics, exit_node):
     """

@@ -85,16 +85,16 @@
   Starting at S gives a distance of 0. Everything else is at infinity because no path is known yet. 
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  Take the unfinalized node `u` with the **smallest** `dist[u]`. Any other path to `u` has to leave the finalized set at some step; that step costs at least `dist[u]` because `u` was smallest. **Every edge cost is nonnegative (zero or positive)**, so the rest of the path only adds more cost. So nothing can beat `dist[u]`, and we can safely lock in `u`.
+  Popping from pq gives the smallest distance, u, among the not yet finalized nodes. Any other path to u has to reach some unfinilized node w where dist[w] >= u because of the nonnegative edge weights, so finalizing u is correct. 
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  Every node that is finalized has its shortest path garunteed. Any node at infinity is unreachable. 
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+If a dist in dist_table was wrong, the search would pick a wrong relic and leads to a suboptimal path. 
 
 ---
 

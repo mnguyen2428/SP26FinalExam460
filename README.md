@@ -72,20 +72,20 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  The nodes in visited are the known cheapest distance
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  The nodes in visited are the cheapest so far. There could be nodes that are not finalized that are cheaper. 
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  Starting at S gives a distance of 0. Everything else is at infinity because no path is known yet. 
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  Take the unfinalized node `u` with the **smallest** `dist[u]`. Any other path to `u` has to leave the finalized set at some step; that step costs at least `dist[u]` because `u` was smallest. **Every edge cost is nonnegative (zero or positive)**, so the rest of the path only adds more cost. So nothing can beat `dist[u]`, and we can safely lock in `u`.
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
   _Your answer here._

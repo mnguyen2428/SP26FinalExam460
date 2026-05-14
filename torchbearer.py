@@ -92,10 +92,30 @@ def run_dijkstra(graph, source):
     dist[source] = 0
     pq = []
     heapq.heappush(pq, (0,source))
+    visited = set()
+   
     while pq:
         d, u = heapq.heappop(pq)
+        if u in visited:
+            continue
+        #explore all neighbors of u
+        for v, cost in graph[u]:
+            if d + cost < dist[v]:
+                dist[v] = d + cost
+                heapq.heappush(pq, (dist[v], v))
+        visited.add(u)
+    return dist
         
-
+def test_dijkstra():
+    graph = {
+        'S': [('B', 1), ('C', 2), ('D', 2)],
+        'B': [('D', 1), ('T', 1)],
+        'C': [('B', 1), ('T', 1)],
+        'D': [('B', 1), ('C', 1)],
+        'T': []
+    }
+    assert run_dijkstra(graph, 'S') == {'S': 0, 'B': 1, 'C': 2, 'D': 2, 'T': 3}
+    print("Test dijkstra passed")
 
 def precompute_distances(graph, spawn, relics, exit_node):
     """
@@ -114,7 +134,11 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources = select_sources(spawn, relics, exit_node)
+    dist_table = {}
+    for source in sources:
+        dist_table[source] = run_dijkstra(graph, source)
+    return dist_table
 
 
 # =============================================================================

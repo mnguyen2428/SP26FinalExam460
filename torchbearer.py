@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Michelle Nguyen
+Student ID:   130389867
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,14 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return """- **Why a single shortest-path run from S is not enough:**
+            A single shortest path run from S is not enough because you also need to consider the path costs after S. Choosing the cheapest from S can result in a larger cost because then you are limited to the paths chosen after S. 
+
+            - **What decision remains after all inter-location costs are known:**
+            Choosing which relic to visit
+
+            - **Why this requires a search over orders (one sentence):**
+            A search allows us to find the orders that provide the minimum cost. """
 
 
 # =============================================================================
@@ -56,7 +63,11 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources = [spawn]
+    for relic in relics: 
+        if relic not in sources:
+            sources.append(relic)
+    return sources
 
 
 def run_dijkstra(graph, source):
@@ -75,7 +86,15 @@ def run_dijkstra(graph, source):
 
     TODO
     """
-    pass
+    #Initialize all nodes to inf
+    dist = {node: float('inf') for node in graph}
+    #source node distance is 0
+    dist[source] = 0
+    pq = []
+    heapq.heappush(pq, (0,source))
+    while pq:
+        d, u = heapq.heappop(pq)
+        
 
 
 def precompute_distances(graph, spawn, relics, exit_node):

@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Michelle Nguyen
+**Student ID:** 130389867
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -17,13 +17,13 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  A single shortest path run from S is not enough because you also need to consider the path costs after S. Choosing the cheapest from S can result in a larger cost because then you are limited to the paths chosen after S. 
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  Choosing which relic to visit
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  A search allows us to find the orders that provide the minimum cost. 
 
 ---
 
@@ -35,8 +35,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Start | The Torchbearer starts here |
+| Relic chamber | After choosing a path, a relic chamber is visited|
 
 ### Part 2b: Distance Storage
 
@@ -44,20 +44,20 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Nested dictionary |
+| What the keys represent | The source node and the destination node |
+| What the values represent | Distance from source node to destination node |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Dictionay lookups in python are O(1) because of hashing |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** k + 1 times because there are k relics and dijkstra runs once from the start node
+- **Cost per run:** O(mlogn) where n = |V| and m = |E|
+- **Total complexity:** O(k+1) * O(mlogn) = O(kmlogn)
+- **Justification (one line):** At each source node, dijkstra is run. 
 
 ---
 

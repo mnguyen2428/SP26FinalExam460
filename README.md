@@ -1,7 +1,7 @@
 # The Torchbearer
 
 **Student Name:** Michelle Nguyen
-**Student ID:** 130389867
+**Student ID:** 130398967
 **Course:** CS 460 – Algorithms | Spring 2026
 
 ---

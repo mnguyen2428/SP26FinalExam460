@@ -34,13 +34,13 @@ Worked on why greedy cannot work for this problem. While coming up with a counte
 ---
 ## Entry 4– May 14: Part 5+6
 
-While working on part 5+6, in _explore(), I noticed that it wasn't trying different paths. I used a print statement to print the sets for relics_remaining, relics_visited_order, and cost_so_far. It only tried one path which wasn't the solution I wanted. To fix this, I added backtracking
+While working on part 5+6, in _explore(), I noticed that it wasn't trying different paths. I used a print statement to print the sets for relics_remaining, relics_visited_order, and cost_so_far. It only tried one path which wasn't the solution I wanted. To fix this, I added backtracking. ALso added pruning which wasn't as difficult as I thought it would be as it was just comparing the cost so far to the best we had. 
 
 ---
 ## Entry 5 – May 14: Post-Implementation Reflection
 
 
-Given more time, or if I had started it more earlier, I would probably work on edge cases more. I was mainly focusing on working through the problems. I would also maybe work on the readibility of my code since there were a lot of variables to deal with. ALso added pruning which wasn't as difficult as I thought it would be as it was just comparing the cost so far to the best we had. 
+Given more time, or if I had started it more earlier, I would probably work on edge cases more. I was mainly focusing on working through the problems. I would also maybe work on the readibility of my code since there were a lot of variables to deal with. 
 
 ---
 
